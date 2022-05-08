@@ -103,7 +103,7 @@ def test_failed_update_self_pet_info(name='Мой', animal_type='Попугай'
     _, auth_key = pf.get_api_key(valid_email, valid_password)
     _, my_pets = pf.get_list_of_pets(auth_key, "my_pets")
 
-    # Если список не пустой, то пробуем обновить его имя, тип и возраст
+    # Если список пустой, то пробуем обновить его имя, тип и возраст
     if len(my_pets['pets']) == 0:
         status, result = pf.update_pet_info(auth_key, my_pets['pets'][0]['id'], name, animal_type, age)
 
